@@ -1,0 +1,92 @@
+body{
+	padding: 0px;
+	margin: 0px
+}
+
+.move{
+	position: absolute;
+	border: 1px solid #000;
+	width: 200px;
+	height: 200px;
+	left: 100px;
+	top: 100px;
+	background-image: url("img.png");
+	background-size: 100% 100%; 
+	background-repeat:no-repeat;
+}
+
+.shadow{
+	box-shadow: 0px 0px 20px #000;
+}
+
+.rotatingPoint{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #2BB32B;
+	right: -20px;
+	top: -20px;
+}
+
+
+.hiddenHooks [class*="hook-"], .hiddenHooks .rotatingPoint{
+	display: none;
+}
+
+
+
+[class*="hook-"]{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #999;
+}
+
+.hook-tl{
+	left: -8px;
+	top: -8px;
+	cursor: se-resize;
+}
+
+.hook-tm{
+	left: 50%;
+	top: -8px;
+	cursor: s-resize;
+}
+
+.hook-tr{
+	right: -8px;
+	top: -8px;
+	cursor: sw-resize;
+}
+
+.hook-lm{
+	left: -8px;
+	top: 50%;
+	cursor: e-resize;
+}
+
+.hook-rm{
+	right: -8px;
+	top: 50%;
+	cursor: w-resize;
+}
+
+.hook-bl{
+	left: -8px;
+	bottom: -8px;
+	cursor: ne-resize;
+}
+
+.hook-bm{
+	left: 50%;
+	bottom: -8px;
+	cursor: n-resize;
+}
+
+.hook-br{
+	right: -8px;
+	bottom: -8px;
+	cursor: nw-resize;
+}
