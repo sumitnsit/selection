@@ -1,0 +1,27 @@
+body{
+	padding: 0px;
+	margin: 30px 10%;
+	width: 80%;
+	background-color: #787E85;	
+
+}
+
+.kdiv{
+	position: absolute;
+	border: 1px solid #999;
+	background-color: #EEE;
+}
+
+.workarea{
+	width: 100%;
+	height: 800px;
+	background-color: #FCFCFC;
+}
+
+.toolbar{
+	padding: 20px 0px;
+}
+
+.selected{
+	background-color: red;
+}

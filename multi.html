@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<script>
+			var controlPressed = false;
+			var boxes = new Array();
+
+			function init(){
+				var one = document.getElementById("move-one");
+				one.onmousedown = getMouseDown();
+
+
+				var two = document.getElementById("move-two");
+				two.onmousedown = getMouseDown();
+
+				addEvent("keydown", keyDown);
+				addEvent("keyup", keyUp);
+			}
+
+			function getMouseDown(){
+				return function(){
+					if(controlPressed){
+						boxes.push(this)
+						this.style.backgroundColor = "green";	
+					}
+					
+				}
+			}
+
+			function addEvent(method, func){
+				document.addEventListener(method, func, false);
+			}
+
+			function keyDown(){
+				console.log("KeyDown");
+				console.log(event.keyCode);
+				controlPressed = event.keyCode == 91;
+				console.log(controlPressed);
+			}
+
+			function keyUp(){
+				console.log("KeyUp");
+				controlPressed = false;
+			}
+		</script>
+
+		<style>
+
+			body{
+				padding: 0px;
+				margin: 0px;
+			}
+
+			[class*="move-"]{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				border: 1px solid black;
+			}
+
+			.move-one{
+				left: 100px;
+				top: 100px;
+			}
+
+			.move-two{
+				left: 400px;
+				top: 100px;
+			}
+		</style>
+	</head>
+
+	<body onload="init()">
+		<div class="move-one" id="move-one"></div>
+		<div class="move-two" id="move-two"></div>
+	</body>
+</html>

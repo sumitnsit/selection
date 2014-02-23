@@ -3,6 +3,10 @@ body{
 	margin: 0px
 }
 
+#moveable1{
+	left: 200px;
+	top: 200px;
+}
 .move{
 	position: absolute;
 	border: 1px solid #000;
