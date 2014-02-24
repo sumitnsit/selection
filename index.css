@@ -1,0 +1,110 @@
+body{
+	padding: 0px;
+	margin: 30px 10%;
+	width: 80%;
+	background-color: #787E85;	
+	
+}
+
+.tips{
+	line-height: 1.8em;
+	font-size: 1.2em;
+	color: white;
+	font-weight: normal;
+}
+
+.kdiv{
+	position: absolute;
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	-webkit-transform-origin: 0% 0%;
+}
+
+.workarea{
+	width: 100%;
+	height: 800px;
+	background-color: #FCFCFC;
+}
+
+.toolbar{
+	padding: 20px 0px;
+}
+
+.selected{
+	/*background-color: #def;*/
+	box-shadow: 0px 0px 6px #ccc;
+
+}
+
+.shadow{
+		box-shadow: 0px 0px 4px #000;
+}
+
+[class*="hook-"]{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #999;
+}
+
+.hook-tl{
+	left: -8px;
+	top: -8px;
+	cursor: se-resize;
+}
+
+.hook-tm{
+	left: 50%;
+	top: -8px;
+	cursor: s-resize;
+}
+
+.hook-tr{
+	right: -8px;
+	top: -8px;
+	cursor: sw-resize;
+}
+
+.hook-lm{
+	left: -8px;
+	top: 50%;
+	cursor: e-resize;
+}
+
+.hook-rm{
+	right: -8px;
+	top: 50%;
+	cursor: w-resize;
+}
+
+.hook-bl{
+	left: -8px;
+	bottom: -8px;
+	cursor: ne-resize;
+}
+
+.hook-bm{
+	left: 50%;
+	bottom: -8px;
+	cursor: n-resize;
+}
+
+.hook-br{
+	right: -8px;
+	bottom: -8px;
+	cursor: nw-resize;
+}
+
+.hideHooks [class*="hook-"], .hideHooks .rotatingPoint{
+	display: none;
+}
+
+.rotatingPoint{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #2BB32B;
+	right: -20px;
+	top: -20px;
+}

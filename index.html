@@ -1,12 +1,24 @@
+<!doctype html>
+
 <html>
 	<head>
-		<link rel="stylesheet" href="final.css">
-		<script src="final-full.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="kCSS.css">
 	</head>
 
 	<body onload="init()">
-			<div class="move hiddenHooks" id="moveable"></div>
+		<div class="toolbar">
+			<button onclick="newDivbuttonClicked()" class="k_button_dark_green">Add New DIV</button>
 
-			<div class="move hiddenHooks" id="moveable1"></div>
+
+		</div>
+
+		<div class="tips">To select multiple press CNTL or COMMAND key</div>
+		<div class="tips">To drag multiple keep CNTL or COMMAND key pressed</div>
+
+		<div class="workarea k_gadda" id="workarea">
+			
+		</div>
 	</body>
 </html>

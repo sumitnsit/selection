@@ -2,45 +2,26 @@
 <html>
 	<head>
 		<script>
-			var controlPressed = false;
-			var boxes = new Array();
+			var angle = 0;
+			var index = 0;
+			function clickme (element){
 
-			function init(){
-				var one = document.getElementById("move-one");
-				one.onmousedown = getMouseDown();
-
-
-				var two = document.getElementById("move-two");
-				two.onmousedown = getMouseDown();
-
-				addEvent("keydown", keyDown);
-				addEvent("keyup", keyUp);
+				
+				angle += 30;
+				element.style.webkitTransform = "rotate(" + angle + "deg)";
 			}
 
-			function getMouseDown(){
-				return function(){
-					if(controlPressed){
-						boxes.push(this)
-						this.style.backgroundColor = "green";	
-					}
-					
-				}
-			}
+			function t(){
+				var transforms = ["0% 0%", "100% 0%", "100% 100%", "0% 100%"];
 
-			function addEvent(method, func){
-				document.addEventListener(method, func, false);
-			}
-
-			function keyDown(){
-				console.log("KeyDown");
-				console.log(event.keyCode);
-				controlPressed = event.keyCode == 91;
-				console.log(controlPressed);
-			}
-
-			function keyUp(){
-				console.log("KeyUp");
-				controlPressed = false;
+				index++;
+				var element = document.getElementById("move-one");
+				element.style.webkitTransformOrigin = transforms[(index)%4];
+				// var x = 100*(1-  Math.cos(angle * Math.PI / 180));
+				// var y = 100*Math.sin(angle * Math.PI / 180);
+				// console.log(x + ", " + y);
+				// element.style.left = (element.offsetLeft - x) + "px";
+				// element.style.top = (element.offsetTop + y) + "px";
 			}
 		</script>
 
@@ -55,24 +36,24 @@
 				position: absolute;
 				width: 100px;
 				height: 100px;
-				background-color: red;
+				background-color: #eee;
 				border: 1px solid black;
+				border-top: 1px solid red;
+				border-bottom: 1px solid green;
 			}
 
 			.move-one{
-				left: 100px;
-				top: 100px;
+				left: 200px;
+				top: 200px;
+				-webkit-transform-origin: 0% 0%;
 			}
 
-			.move-two{
-				left: 400px;
-				top: 100px;
-			}
 		</style>
 	</head>
 
-	<body onload="init()">
-		<div class="move-one" id="move-one"></div>
-		<div class="move-two" id="move-two"></div>
+	<body>
+		<div class="move-one" id="move-one" onclick="clickme(this)"></div>
+
+		<button onclick="t()">Change origin</button>
 	</body>
 </html>
